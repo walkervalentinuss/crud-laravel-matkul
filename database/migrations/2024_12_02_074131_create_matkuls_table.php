@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('matkuls', function (Blueprint $table) {
             $table->id();
+            $table->string('kode', 255);
+            $table->string('nama', 100);
+            $table->year('tahun_kurikulum');
+            $table->foreignId('dosen_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('ruangan_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }
