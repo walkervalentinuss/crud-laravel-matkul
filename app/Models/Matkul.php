@@ -10,12 +10,12 @@ class Matkul extends Model
     //
     protected $guarded = [];
 
-    public function dosens(): BelongsTo
+    public function dosen(): BelongsTo
     {
         return $this->belongsTo(Dosen::class);
     }
 
-    public function ruangans(): BelongsTo
+    public function ruangan(): BelongsTo
     {
         return $this->belongsTo(Ruangan::class);
     }

@@ -39,8 +39,8 @@ class MatkulController extends Controller
             'kode' => 'required|max:10',
             'nama' => 'required|max:255',
             'tahun_kurikulum' => 'required|integer:4',
-            'dosen_id' => 'required|max:100',
-            'ruangan_id' => 'required|max:100',
+            'dosen_id' => 'required',
+            'ruangan_id' => 'required',
         ]);
 
         // simpan data
@@ -67,7 +67,7 @@ class MatkulController extends Controller
         //
         $dosen = Dosen::all();
         $ruangan = Ruangan::all();
-        return view('matkul.edit', compact('dosen', 'ruangan'));
+        return view('matkul.edit', compact('matkul', 'dosen', 'ruangan'));
     }
 
     /**
@@ -80,8 +80,8 @@ class MatkulController extends Controller
             'kode' => 'required|max:10',
             'nama' => 'required|max:255',
             'tahun_kurikulum' => 'required|integer:4',
-            'dosen_id' => 'required|max:100',
-            'ruangan_id' => 'required|max:100',
+            'dosen_id' => 'required',
+            'ruangan_id' => 'required',
         ]);
 
         // update data

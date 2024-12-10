@@ -11,6 +11,7 @@
             <th>Tahun Kurikulum</th>
             <th>Dosen Pengampu</th>
             <th>Ruangan</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -20,8 +21,8 @@
                 <td>{{ $r->kode }}</td>
                 <td>{{ $r->nama }}</td>
                 <td>{{ $r->tahun_kurikulum }}</td>
-                <td>{{ $r->nama_matkul }}</td>
-                <td>{{ $r->nama_matkul }}</td>
+                <td>{{ $r->dosen->nama_dosen }}</td>
+                <td>{{ $r->ruangan->nama_ruangan }}</td>
                 <td>
                     <form action="{{ route('matkul.destroy', $r->id) }}" method="POST">
                         <a href="{{ route('matkul.show', $r->id) }}" class="tombol">Detail</a>
