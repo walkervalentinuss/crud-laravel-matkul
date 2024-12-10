@@ -23,7 +23,7 @@
                 <td>{{ $r->tahun_kurikulum }}</td>
                 <td>{{ $r->dosen->nama_dosen }}</td>
                 <td>{{ $r->ruangan->nama_ruangan }}</td>
-                <td>
+                <td style="width: 200px;">
                     <form action="{{ route('matkul.destroy', $r->id) }}" method="POST">
                         <a href="{{ route('matkul.show', $r->id) }}" class="tombol">Detail</a>
                         <a href="{{ route('matkul.edit', $r->id) }}" class="tombol">Edit</a>
