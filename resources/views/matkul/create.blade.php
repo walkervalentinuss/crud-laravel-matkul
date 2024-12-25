@@ -1,6 +1,6 @@
 @include('layout.header')
 <h3>Tambah Matkul</h3>
-<form action="{{ route('matkul.store') }}" method="post">
+<form action="{{ route('matkul.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="kode">Kode Matkul:</label>
@@ -29,6 +29,10 @@
                 <option value="{{ $r->id }}">{{ $r->nama_ruangan }}</option>
             @endforeach
         </select>
+    </div>
+    <div class="form-group">
+        <label for="">Gambar Referensi</label>
+        <input type="file" name="file_referensi" id="">
     </div>
     <button type="submit" class="tombol">Submit</button>
 </form>

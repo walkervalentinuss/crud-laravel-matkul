@@ -1,6 +1,6 @@
 @include('layout.header')
 <h3>Edit Matkul</h3>
-<form action="{{ route('matkul.update', $matkul->id) }}" method="post">
+<form action="{{ route('matkul.update', $matkul->id) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-group">
@@ -31,6 +31,14 @@
             @endforeach
         </select>
     </div>
+    <div class="form-group">
+        <label for="">Gambar Referensi</label>
+        @if ($matkul->referensi)
+            <img src="{{ asset('storage/' . $matkul->referensi) }}" alt="Referensi Lama" width="90">
+        @endif
+        <input type="file" name="file_referensi" id="">
+    </div>
+    <input type="hidden" name="referensi_lama" value="{{ $matkul->referensi }}">
     <button type="submit" class="tombol">Update</button>
 </form>
 @include('layout.footer')

@@ -1,5 +1,11 @@
 @include('layout.header')
 <h3>Detail Matkul</h3>
+
+@if ($matkul->referensi)
+    <div style="text-align: center;">
+        <img src="{{ asset('storage/' . $matkul->referensi) }}" alt="Cover Referensi" width="150">
+    </div>
+@endif
 <table>
     <tbody>
             <tr>
